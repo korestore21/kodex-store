@@ -5,47 +5,693 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KØDEX — Tecnología & Accesorios</title>
+
 <style>
-:root{--bg:#050505;--panel:#0d0d0f;--line:#252528;--text:#f5f5f5;--muted:#a2a2a8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#1c1c20 0,#080808 30%,#050505 70%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}a{text-decoration:none;color:inherit}
-.wrap{max-width:1100px;margin:auto;padding:0 22px}header{position:sticky;top:0;z-index:10;background:#050505dd;backdrop-filter:blur(16px);border-bottom:1px solid #222}.nav{height:70px;display:flex;justify-content:space-between;align-items:center}.brand{font-size:24px;font-weight:800;letter-spacing:8px}.nav a{font-size:13px;color:#bbb}
-.hero{text-align:center;padding:105px 0 90px}.eyebrow{font-size:10px;letter-spacing:5px;color:#929298;text-transform:uppercase}.hero h1{font-size:clamp(48px,9vw,92px);line-height:.9;letter-spacing:-4px;margin:18px 0}.hero h1 span{display:block;color:#85858b}.hero p{max-width:610px;margin:auto;color:#aaa;line-height:1.7}
-section{padding:70px 0}.head{text-align:center;margin-bottom:32px}.head h2{font-size:35px;margin:0 0 10px}.head p{color:#999;line-height:1.6}
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cat{min-height:230px;padding:28px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#111114,#090909);display:flex;flex-direction:column;justify-content:end;transition:.2s}.cat:hover{transform:translateY(-4px);border-color:#555}.icon{font-size:46px;margin-bottom:auto}.cat h3{font-size:24px;margin:0 0 7px}.cat p{color:#999;margin:0;line-height:1.5;font-size:14px}
-.page{display:none}.page:target{display:block}.back{display:inline-block;color:#bbb;font-size:13px;margin-bottom:24px}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(145deg,#111114,#080808)}.visual{height:280px;display:grid;place-items:center;background:radial-gradient(circle,#29292e,#090909 68%);font-size:95px;filter:drop-shadow(0 20px 25px #000)}.body{padding:24px}.tag{font-size:10px;letter-spacing:3px;color:#888;text-transform:uppercase}.product h3{font-size:25px;margin:9px 0}.desc{color:#9d9da2;font-size:14px;line-height:1.55}.price{font-size:32px;font-weight:800;margin:17px 0}.body ul{padding-left:18px;color:#bbb;line-height:1.9;font-size:13px}.buy{display:block;text-align:center;background:#f3f3f3;color:#050505;padding:13px;border-radius:12px;font-weight:700;margin-top:18px}
-.note{font-size:12px;color:#6f6f74;margin-top:25px;line-height:1.6}.info{display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{border:1px solid var(--line);border-radius:22px;padding:27px;background:#0b0b0d}.box h3{margin-top:0}.box p,.box li{color:#a3a3a8;line-height:1.7;font-size:14px}.cta{text-align:center;border:1px solid #303034;border-radius:26px;padding:42px;background:radial-gradient(circle at 50% 0,#222225,#0a0a0b 65%)}.cta h2{font-size:38px;margin:0 0 10px}.btn{display:inline-block;padding:14px 20px;border-radius:999px;border:1px solid #3a3a3e;margin:7px;font-weight:700}.primary{background:#f3f3f3;color:#050505}
-footer{border-top:1px solid #222;padding:30px 0;color:#777;font-size:12px}
-@media(max-width:700px){.cats,.products,.info{grid-template-columns:1fr}.nav a{display:none}.hero{padding:85px 0}.visual{height:300px}}
+:root{
+  --bg:#050505;
+  --panel:#0d0d0f;
+  --line:#252528;
+  --text:#f5f5f5;
+  --muted:#a2a2a8
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at 80% 0,#1c1c20 0,#080808 30%,#050505 70%);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:0 22px
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#050505dd;
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #222
+}
+
+.nav{
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.brand{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:8px
+}
+
+.nav a{
+  font-size:13px;
+  color:#bbb
+}
+
+.hero{
+  text-align:center;
+  padding:105px 0 90px
+}
+
+.eyebrow{
+  font-size:10px;
+  letter-spacing:5px;
+  color:#929298;
+  text-transform:uppercase
+}
+
+.hero h1{
+  font-size:clamp(48px,9vw,92px);
+  line-height:.9;
+  letter-spacing:-4px;
+  margin:18px 0
+}
+
+.hero h1 span{
+  display:block;
+  color:#85858b
+}
+
+.hero p{
+  max-width:610px;
+  margin:auto;
+  color:#aaa;
+  line-height:1.7
+}
+
+section{
+  padding:70px 0
+}
+
+.head{
+  text-align:center;
+  margin-bottom:32px
+}
+
+.head h2{
+  font-size:35px;
+  margin:0 0 10px
+}
+
+.head p{
+  color:#999;
+  line-height:1.6
+}
+
+.cats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.cat{
+  min-height:230px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(145deg,#111114,#090909);
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  transition:.2s
+}
+
+.cat:hover{
+  transform:translateY(-4px);
+  border-color:#555
+}
+
+.icon{
+  font-size:46px;
+  margin-bottom:auto
+}
+
+.cat h3{
+  font-size:24px;
+  margin:0 0 7px
+}
+
+.cat p{
+  color:#999;
+  margin:0;
+  line-height:1.5;
+  font-size:14px
+}
+
+.page{
+  display:none
+}
+
+.page:target{
+  display:block
+}
+
+.back{
+  display:inline-block;
+  color:#bbb;
+  font-size:13px;
+  margin-bottom:24px
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px
+}
+
+.product{
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#111114,#080808)
+}
+
+.visual{
+  height:280px;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle,#29292e,#090909 68%);
+  font-size:95px;
+  filter:drop-shadow(0 20px 25px #000)
+}
+
+.body{
+  padding:24px
+}
+
+.tag{
+  font-size:10px;
+  letter-spacing:3px;
+  color:#888;
+  text-transform:uppercase
+}
+
+.product h3{
+  font-size:25px;
+  margin:9px 0
+}
+
+.desc{
+  color:#9d9da2;
+  font-size:14px;
+  line-height:1.55
+}
+
+.price{
+  font-size:32px;
+  font-weight:800;
+  margin:17px 0
+}
+
+.body ul{
+  padding-left:18px;
+  color:#bbb;
+  line-height:1.9;
+  font-size:13px
+}
+
+.buy{
+  display:block;
+  text-align:center;
+  background:#f3f3f3;
+  color:#050505;
+  padding:13px;
+  border-radius:12px;
+  font-weight:700;
+  margin-top:18px
+}
+
+.note{
+  font-size:12px;
+  color:#6f6f74;
+  margin-top:25px;
+  line-height:1.6
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px
+}
+
+.box{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:27px;
+  background:#0b0b0d
+}
+
+.box h3{
+  margin-top:0
+}
+
+.box p,
+.box li{
+  color:#a3a3a8;
+  line-height:1.7;
+  font-size:14px
+}
+
+.cta{
+  text-align:center;
+  border:1px solid #303034;
+  border-radius:26px;
+  padding:42px;
+  background:radial-gradient(circle at 50% 0,#222225,#0a0a0b 65%)
+}
+
+.cta h2{
+  font-size:38px;
+  margin:0 0 10px
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 20px;
+  border-radius:999px;
+  border:1px solid #3a3a3e;
+  margin:7px;
+  font-weight:700
+}
+
+.primary{
+  background:#f3f3f3;
+  color:#050505
+}
+
+footer{
+  border-top:1px solid #222;
+  padding:30px 0;
+  color:#777;
+  font-size:12px
+}
+
+@media(max-width:700px){
+  .cats,
+  .products,
+  .info{
+    grid-template-columns:1fr
+  }
+
+  .nav a{
+    display:none
+  }
+
+  .hero{
+    padding:85px 0
+  }
+
+  .visual{
+    height:300px
+  }
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#">KØDEX</a><a href="#categorias">Categorías</a></div></header>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="#">KØDEX</a>
+<a href="#categorias">Categorías</a>
+</div>
+</header>
 
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Tecnología · Accesorios · Lifestyle</div><h1>KØDEX<br><span>STORE</span></h1><p>Explora nuestra tienda por categorías. Entra en la categoría que buscas y descubre los productos disponibles.</p></div></section>
 
-<section id="categorias"><div class="wrap"><div class="head"><h2>Categorías</h2><p>Selecciona una categoría para ver sus productos.</p></div>
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Tecnología · Accesorios · Lifestyle</div>
+
+<h1>
+KØDEX
+<br>
+<span>STORE</span>
+</h1>
+
+<p>
+Explora nuestra tienda por categorías.
+Entra en la categoría que buscas y descubre los productos disponibles.
+</p>
+
+</div>
+</section>
+
+<section id="categorias">
+
+<div class="wrap">
+
+<div class="head">
+<h2>Categorías</h2>
+<p>Selecciona una categoría para ver sus productos.</p>
+</div>
+
 <div class="cats">
-<a class="cat" href="#audio"><div class="icon">🎧</div><h3>Audio</h3><p>Audífonos y productos para disfrutar tu música.</p></a>
-<a class="cat" href="#carga"><div class="icon">⚡</div><h3>Carga</h3><p>Cargadores y accesorios para mantener tus dispositivos listos.</p></a>
-<a class="cat" href="#proteccion"><div class="icon">📱</div><h3>Protección</h3><p>Fundas y accesorios para complementar tus dispositivos.</p></a>
-</div></div></section>
 
-<section id="audio" class="page"><div class="wrap"><a class="back" href="#categorias">← Volver a categorías</a><div class="head"><h2>🎧 Audio</h2><p>Productos de audio disponibles en KØDEX.</p></div><div class="products">
-<article class="product"><div class="visual">🎧</div><div class="body"><div class="tag">Disponible</div><h3>AirPods Pro 2</h3><div class="desc">Audífonos inalámbricos con cancelación de ruido y estuche de carga.</div><div class="price">$16</div><ul><li>Cancelación de ruido</li><li>Modo ambiente</li><li>Audio espacial</li><li>Control táctil</li></ul><a class="buy" href="https://wa.me/593992889886?text=Hola%20K%C3%98DEX%2C%20quiero%20consultar%20los%20AirPods%20Pro%202." target="_blank">Comprar / consultar</a></div></article>
-<article class="product"><div class="visual">🎧</div><div class="body"><div class="tag">Disponible</div><h3>AirPods Pro Max</h3><div class="desc">Audífonos over-ear de estilo premium para música y entretenimiento.</div><div class="price">$23</div><ul><li>Diseño over-ear</li><li>Sonido inmersivo</li><li>Almohadillas acolchadas</li><li>Conexión inalámbrica</li></ul><a class="buy" href="https://wa.me/593992889886?text=Hola%20K%C3%98DEX%2C%20quiero%20consultar%20los%20AirPods%20Pro%20Max." target="_blank">Comprar / consultar</a></div></article>
-</div><p class="note">KØDEX no es una tienda oficial de Apple. Confirma disponibilidad y características exactas antes de comprar.</p></div></section>
+<a class="cat" href="#audio">
+<div class="icon">🎧</div>
+<h3>Audio</h3>
+<p>Audífonos y productos para disfrutar tu música.</p>
+</a>
 
-<section id="carga" class="page"><div class="wrap"><a class="back" href="#categorias">← Volver a categorías</a><div class="head"><h2>⚡ Carga</h2><p>Accesorios de carga disponibles en KØDEX.</p></div><div class="products">
-<article class="product"><div class="visual">🔌</div><div class="body"><div class="tag">Disponible</div><h3>Cargador para iPhone</h3><div class="desc">Cargador para iPhone. Confirma el modelo y compatibilidad antes de comprar.</div><div class="price">$12</div><ul><li>Diseño compacto</li><li>Ideal para uso diario</li><li>Consulta compatibilidad</li></ul><a class="buy" href="https://wa.me/593992889886?text=Hola%20K%C3%98DEX%2C%20quiero%20consultar%20el%20cargador%20para%20iPhone." target="_blank">Comprar / consultar</a></div></article>
-</div></div></section>
+<a class="cat" href="#carga">
+<div class="icon">⚡</div>
+<h3>Carga</h3>
+<p>Cargadores y accesorios para mantener tus dispositivos listos.</p>
+</a>
 
-<section id="proteccion" class="page"><div class="wrap"><a class="back" href="#categorias">← Volver a categorías</a><div class="head"><h2>📱 Protección</h2><p>Próximamente nuevos accesorios de protección.</p></div><div class="cta"><h2>Muy pronto.</h2><p>Estamos preparando nuevos productos para KØDEX.</p><a class="btn primary" href="https://www.instagram.com/kodexstore.ec/" target="_blank">Ver Instagram</a></div></div></section>
+<a class="cat" href="#proteccion">
+<div class="icon">📱</div>
+<h3>Protección</h3>
+<p>Fundas y accesorios para complementar tus dispositivos.</p>
+</a>
 
-<section><div class="wrap"><div class="info"><div class="box"><h3>Entregas</h3><ul><li>Santa Elena</li><li>Salinas</li><li>La Libertad</li></ul></div><div class="box"><h3>KØDEX</h3><p>Tecnología · Accesorios · Lifestyle</p><p><strong>Es solo el comienzo.</strong></p></div></div></div></section>
+</div>
+</div>
+</section>
 
-<section><div class="wrap"><div class="cta"><div class="eyebrow">KØDEX · ECUADOR</div><h2>¿Quieres comprar?</h2><p>Escríbenos directamente por WhatsApp.</p><a class="btn primary" href="https://wa.me/593992889886?text=Hola%20K%C3%98DEX%2C%20quiero%20hacer%20un%20pedido." target="_blank">WhatsApp</a><a class="btn" href="https://www.instagram.com/kodexstore.ec/" target="_blank">@kodexstore.ec</a></div></div></section>
+
+<section id="audio" class="page">
+
+<div class="wrap">
+
+<a class="back" href="#categorias">
+← Volver a categorías
+</a>
+
+<div class="head">
+<h2>🎧 Audio</h2>
+<p>Productos de audio disponibles en KØDEX.</p>
+</div>
+
+<div class="products">
+
+<article class="product">
+
+<div class="visual">🎧</div>
+
+<div class="body">
+
+<div class="tag">Disponible</div>
+
+<h3>AirPods Pro 2</h3>
+
+<div class="desc">
+Audífonos inalámbricos con cancelación de ruido y estuche de carga.
+</div>
+
+<div class="price">$16</div>
+
+<ul>
+<li>Cancelación de ruido</li>
+<li>Modo ambiente</li>
+<li>Audio espacial</li>
+<li>Control táctil</li>
+</ul>
+
+<a
+class="buy"
+href="https://wa.me/593992889886"
+target="_blank">
+Comprar / consultar
+</a>
+
+</div>
+</article>
+
+
+<article class="product">
+
+<div class="visual">🎧</div>
+
+<div class="body">
+
+<div class="tag">Disponible</div>
+
+<h3>AirPods Pro Max</h3>
+
+<div class="desc">
+Audífonos over-ear de estilo premium para música y entretenimiento.
+</div>
+
+<div class="price">$23</div>
+
+<ul>
+<li>Diseño over-ear</li>
+<li>Sonido inmersivo</li>
+<li>Almohadillas acolchadas</li>
+<li>Conexión inalámbrica</li>
+</ul>
+
+<a
+class="buy"
+href="https://wa.me/593992889886"
+target="_blank">
+Comprar / consultar
+</a>
+
+</div>
+</article>
+
+</div>
+
+<p class="note">
+KØDEX no es una tienda oficial de Apple.
+Confirma disponibilidad y características exactas antes de comprar.
+</p>
+
+</div>
+</section>
+
+
+<section id="carga" class="page">
+
+<div class="wrap">
+
+<a class="back" href="#categorias">
+← Volver a categorías
+</a>
+
+<div class="head">
+<h2>⚡ Carga</h2>
+<p>Accesorios de carga disponibles en KØDEX.</p>
+</div>
+
+<div class="products">
+
+<article class="product">
+
+<div class="visual">🔌</div>
+
+<div class="body">
+
+<div class="tag">Disponible</div>
+
+<h3>USB-C → USB-C</h3>
+
+<div class="desc">
+Cable/cargador para iPhone con conexión USB-C.
+Confirma compatibilidad antes de comprar.
+</div>
+
+<div class="price">$12</div>
+
+<ul>
+<li>Conexión USB-C</li>
+<li>Diseño compacto</li>
+<li>Ideal para uso diario</li>
+</ul>
+
+<a
+class="buy"
+href="https://wa.me/593992889886"
+target="_blank">
+Comprar / consultar
+</a>
+
+</div>
+</article>
+
+
+<article class="product">
+
+<div class="visual">🔌</div>
+
+<div class="body">
+
+<div class="tag">Disponible</div>
+
+<h3>USB-A → Lightning</h3>
+
+<div class="desc">
+Cable/cargador Lightning para iPhone.
+Confirma compatibilidad antes de comprar.
+</div>
+
+<div class="price">$12</div>
+
+<ul>
+<li>Conexión Lightning</li>
+<li>Diseño compacto</li>
+<li>Ideal para uso diario</li>
+</ul>
+
+<a
+class="buy"
+href="https://wa.me/593992889886"
+target="_blank">
+Comprar / consultar
+</a>
+
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<section id="proteccion" class="page">
+
+<div class="wrap">
+
+<a class="back" href="#categorias">
+← Volver a categorías
+</a>
+
+<div class="head">
+
+<h2>📱 Protección</h2>
+
+<p>
+Próximamente nuevos accesorios de protección.
+</p>
+
+</div>
+
+<div class="cta">
+
+<h2>Muy pronto.</h2>
+
+<p>
+Estamos preparando nuevos productos para KØDEX.
+</p>
+
+<a
+class="btn primary"
+href="https://www.instagram.com/kodexstore.ec/"
+target="_blank">
+Ver Instagram
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<div class="info">
+
+<div class="box">
+
+<h3>Entregas</h3>
+
+<ul>
+<li>Santa Elena</li>
+<li>Salinas</li>
+<li>La Libertad</li>
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>KØDEX</h3>
+
+<p>
+Tecnología · Accesorios · Lifestyle
+</p>
+
+<p>
+<strong>Es solo el comienzo.</strong>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<div class="cta">
+
+<div class="eyebrow">
+KØDEX · ECUADOR
+</div>
+
+<h2>¿Quieres comprar?</h2>
+
+<p>
+Escríbenos directamente por WhatsApp.
+</p>
+
+<a
+class="btn primary"
+href="https://wa.me/593992889886"
+target="_blank">
+WhatsApp
+</a>
+
+<a
+class="btn"
+href="https://www.instagram.com/kodexstore.ec/"
+target="_blank">
+@kodexstore.ec
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
-<footer><div class="wrap">© 2026 KØDEX STORE · Santa Elena · Salinas · La Libertad</div></footer>
+
+
+<footer>
+
+<div class="wrap">
+© 2026 KØDEX STORE · Santa Elena · Salinas · La Libertad
+</div>
+
+</footer>
+
 </body>
 </html>
