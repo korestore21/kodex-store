@@ -359,9 +359,23 @@ section{
   transform:translateX(120%);
 }
 
+/* IMAGEN PREMIUM AIRPODS PRO 2 */
+
+.visual.airpods-pro2{
+  padding:0;
+  background:#050505;
+  animation:none;
+}
+
+.visual.airpods-pro2 img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
 /* EMOJIS DE PRODUCTOS */
 
-.visual.airpods-pro2,
 .visual.airpods-max,
 .visual.charger-usbc,
 .visual.charger-lightning{
@@ -372,8 +386,6 @@ section{
   animation:floatProduct 3.5s ease-in-out infinite;
 }
 
-.visual.airpods-pro2:before,
-.visual.airpods-pro2:after,
 .visual.airpods-max:before,
 .visual.airpods-max:after,
 .visual.charger-usbc:before,
@@ -381,12 +393,6 @@ section{
 .visual.charger-lightning:before,
 .visual.charger-lightning:after{
   display:none;
-}
-
-.visual.airpods-pro2::after{
-  content:"🎧";
-  display:block;
-  position:static;
 }
 
 .visual.airpods-max::after{
@@ -776,7 +782,7 @@ Productos de audio disponibles en KØDEX.
 <article class="product">
 
 <div class="visual airpods-pro2" aria-label="AirPods Pro 2">
-🎧
+  <img src="airpods_pro_2_tecnologia_y_estilo.png" alt="AirPods Pro 2 — KØDEX">
 </div>
 
 <div class="body">
