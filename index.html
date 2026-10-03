@@ -408,29 +408,27 @@ section{
   display:block;
 }
 
-/* EMOJI DEL CARGADOR LIGHTNING */
+/* PRODUCTO USB-A → LIGHTNING */
 
 .visual.charger-lightning{
-  font-size:90px;
-  background:
-    radial-gradient(circle at 50% 43%,rgba(255,255,255,.12),transparent 24%),
-    radial-gradient(circle at 50% 50%,#26262b 0%,#111114 38%,#070708 76%);
-  animation:floatProduct 3.5s ease-in-out infinite;
+  padding:0;
+  background:#050505;
+  animation:none;
+  position:relative;
+  overflow:hidden;
 }
 
 .visual.charger-lightning::after{
-  content:"🔌";
-  display:block;
-  position:static;
+  content:none !important;
+  display:none !important;
 }
 
-@keyframes floatProduct{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-9px);
-  }
+.visual.charger-lightning img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
 }
 
 /* PRODUCT INFO */
@@ -940,8 +938,8 @@ Comprar / consultar
 
 <article class="product">
 
-<div class="visual charger-lightning" aria-label="Cargador Lightning">
-🔌
+<div class="visual charger-lightning" aria-label="Cargador USB-A a Lightning">
+  <img src="cargador_tipo_a_lightning.png" alt="Cable Tipo A a Lightning">
 </div>
 
 <div class="body">
