@@ -385,21 +385,37 @@ section{
   display:block;
 }
 
-/* EMOJIS DE PRODUCTOS */
+/* PRODUCTO USB-C */
 
-.visual.charger-usbc,
+.visual.charger-usbc{
+  padding:0;
+  background:#050505;
+  animation:none;
+  position:relative;
+  overflow:hidden;
+}
+
+.visual.charger-usbc::after{
+  content:none !important;
+  display:none !important;
+}
+
+.visual.charger-usbc img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+
+/* EMOJI DEL CARGADOR LIGHTNING */
+
 .visual.charger-lightning{
   font-size:90px;
   background:
     radial-gradient(circle at 50% 43%,rgba(255,255,255,.12),transparent 24%),
     radial-gradient(circle at 50% 50%,#26262b 0%,#111114 38%,#070708 76%);
   animation:floatProduct 3.5s ease-in-out infinite;
-}
-
-.visual.charger-usbc::after{
-  content:"🔌";
-  display:block;
-  position:static;
 }
 
 .visual.charger-lightning::after{
@@ -884,7 +900,7 @@ Accesorios de carga disponibles en KØDEX.
 <article class="product">
 
 <div class="visual charger-usbc" aria-label="Cargador USB-C">
-🔌
+  <img src="cargador_tipo_c_a_c.png" alt="Cable Tipo C a C">
 </div>
 
 <div class="body">
